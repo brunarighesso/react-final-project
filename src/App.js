@@ -9,7 +9,7 @@ export default function App() {
         <h1>Weather App</h1>
         <Weather />
         <footer>
-          This project was coded by{" "}
+          This project was coded by {" "}
           <a
             href="https://www.linkedin.com/in/bruna-righesso-23175622/"
             target="_blank"
