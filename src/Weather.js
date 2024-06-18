@@ -70,7 +70,6 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "0a521eaf234a3a56f45252fac3c737ad";
-    let city = "Lisbon";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 

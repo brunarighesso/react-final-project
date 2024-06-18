@@ -7,7 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <h1>Weather App</h1>
-        <Weather deafaultCity="Lisbon" />
+        <Weather defaultCity="Lisbon" />
         <footer>
           This project was coded by{" "}
           <a
@@ -18,6 +18,7 @@ export default function App() {
           </a>{" "}
           and is open sourced{" "}
           <a
+            rel="noreferrer"
             href="https://github.com/brunarighesso/react-final-project"
             target="_blank"
           >
