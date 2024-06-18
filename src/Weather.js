@@ -1,16 +1,19 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 
 export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       temperature: response.data.main.temp,
-      wind: "12",
+      humidity: response.data.main.humidity,
+      date: "WEdnesday 07:00",
+      description: response.data.weather[0].description,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
+      wind: response.data.main.speed,
       city: response.data.name,
     });
 
@@ -41,24 +44,25 @@ export default function Weather() {
         </ul>
         <div className="row mt-3">
           <div className="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Mostly cloudy"
-              className="float-left"
-            />
+            <div className="clearfix">
+              <img
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
+                className="float-left"
+              />
 
-            <div className="float-left">
-              <span className="temperature">
-                {Math.round(weatherData.temperature)}
-              </span>
-              <span className="unit">°C</span>
+              <div className="float-left">
+                <span className="temperature">
+                  {Math.round(weatherData.temperature)}
+                </span>
+                <span className="unit">°C</span>
+              </div>
             </div>
           </div>
         </div>
         <div className="col-6">
           <ul>
-            <li>Precipitation: 15%</li>
-            <li>Humidity:13km/h</li>
+            <li>Humidity:{weatherData.humidity}%</li>
             <li>Wind:{weatherData.wind}km/h</li>
           </ul>
         </div>
