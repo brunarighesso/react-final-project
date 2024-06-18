@@ -22,6 +22,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
+        <h1>Lisbon</h1>
         <form>
           <div className="row">
             <div className="col-9">
