@@ -13,6 +13,7 @@ export default function App() {
           <a
             href="https://www.linkedin.com/in/bruna-righesso-23175622/"
             target="_blank"
+            rel="noreferrer"
           >
             Bruna Righesso
           </a>{" "}
